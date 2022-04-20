@@ -1,0 +1,28 @@
+@function light($color) {
+  @return lighten($color, 10%);
+}
+
+@function dark($color) {
+  @return darken($color, 10%);
+}
+
+@function unit($value: 1) {
+  @return 0.25rem * $value;
+}
+
+// Colors
+
+$primary-color: #7df9ff;
+$accent-color: #ffe302;
+$background-color: #2a3439;
+$text-color: #f8f4ff;
+
+//
+
+$space: unit();
+$space-gutter: 4 * $space;
+$border-radius: $space;
+$prose-width: 65ch;
+
+$lg-bp: 720px;
+$xl-bp: 1080px;

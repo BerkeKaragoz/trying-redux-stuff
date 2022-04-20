@@ -1,0 +1,28 @@
+@function copy($value, $count, $delimiter: " ") {
+  @if $count < 2 {
+    @if $count == 1 {
+      @return $value;
+    }
+    @return "";
+  }
+
+  $string: $value;
+
+  @for $i from 2 through $count {
+    $string: $string + $delimiter + $value;
+  }
+
+  @return unquote($string);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-stretch {
+  justify-content: stretch;
+}

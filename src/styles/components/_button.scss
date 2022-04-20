@@ -1,0 +1,41 @@
+@mixin app-button {
+  padding: unit(1) unit(2);
+  font-weight: bold;
+  user-select: none;
+  border-radius: $border-radius;
+  transition: 128ms;
+
+  border-width: unit(0.5);
+  border-style: solid;
+
+  &:focus-visible {
+    text-decoration: underline;
+  }
+
+  &:enabled {
+    cursor: pointer;
+
+    border-color: $text-color;
+    color: $background-color;
+    background-color: $text-color;
+
+    &:hover {
+      border-color: dark($text-color);
+      color: light($background-color);
+    }
+
+    &:active {
+      border-color: dark($primary-color);
+      color: $background-color;
+      cursor: default;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    color: rgba($text-color, 0.5);
+    background-color: dark($background-color);
+    border-color: dark($background-color);
+  }
+}

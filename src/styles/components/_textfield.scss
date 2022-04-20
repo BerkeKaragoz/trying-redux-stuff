@@ -1,0 +1,40 @@
+@mixin app-textfield {
+  padding: unit(1) unit(2);
+  border-radius: $border-radius;
+  transition: 128ms;
+
+  border-width: unit(0.5);
+  border-style: solid;
+
+  &:enabled {
+    // Underline
+    background: linear-gradient(copy(rgba($background-color, 0.5), 2, ","))
+      center bottom unit(0.5) / calc(100% - unit(2)) 1px no-repeat;
+
+    color: dark($background-color);
+    border-color: $text-color;
+    background-color: $text-color;
+
+    &:hover {
+      border-color: dark($text-color);
+      color: light($background-color);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+
+    // Underline
+    background: linear-gradient(copy(rgba($text-color, 0.2), 2, ",")) center
+      bottom unit(0.5) / calc(100% - unit(2)) 1px no-repeat;
+
+    color: rgba($text-color, 0.5);
+    background-color: dark($background-color);
+    border-color: dark($background-color);
+  }
+}

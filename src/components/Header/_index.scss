@@ -1,0 +1,22 @@
+$header-height: unit(20);
+
+@mixin AppHeader {
+  .app-header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: $header-height;
+    border-bottom: 1px solid $text-color;
+
+    $bg-opacity: 0.8;
+    background-color: rgba(dark($background-color), $bg-opacity);
+
+    backdrop-filter: blur(unit());
+
+    + div {
+      height: $header-height;
+      background-color: rgba(dark($background-color), 1 - $bg-opacity);
+    }
+  }
+}

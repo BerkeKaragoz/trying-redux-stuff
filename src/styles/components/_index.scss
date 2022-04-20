@@ -1,0 +1,14 @@
+@import "./button";
+@import "./textfield";
+
+button {
+  @include app-button;
+}
+
+input {
+  &,
+  &[type="text"],
+  &[type="password"] {
+    @include app-textfield;
+  }
+}
